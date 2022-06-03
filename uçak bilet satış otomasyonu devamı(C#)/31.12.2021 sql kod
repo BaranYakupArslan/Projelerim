@@ -1,0 +1,336 @@
+USE [proje_sifre]
+GO
+/****** Object:  Table [dbo].[kayit_bilgiler]    Script Date: 31.12.2021 14:34:15 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[kayit_bilgiler](
+	[adi] [nvarchar](50) NULL,
+	[soyadi] [nvarchar](50) NULL,
+	[dogum_tarihi] [nvarchar](50) NULL,
+	[uyruk] [nvarchar](50) NULL,
+	[cinsiyet] [nchar](10) NULL,
+	[ulke_id] [int] NULL,
+	[sehir_id] [int] NULL,
+	[posta_kodu] [int] NULL,
+	[adres] [nvarchar](500) NULL,
+	[e_posta] [nvarchar](100) NULL,
+	[ulke_bolge_kodu] [nvarchar](50) NULL,
+	[cep_tel] [nvarchar](50) NULL,
+	[sifre] [nvarchar](50) NOT NULL,
+	[yolcu_id] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PK_kayit_bilgiler] PRIMARY KEY CLUSTERED 
+(
+	[yolcu_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[koltuk]    Script Date: 31.12.2021 14:34:15 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[koltuk](
+	[koltuk_id] [int] IDENTITY(1,1) NOT NULL,
+	[koltuk_fiyat] [int] NULL,
+	[sınıf_id] [int] NULL,
+ CONSTRAINT [PK_koltuk] PRIMARY KEY CLUSTERED 
+(
+	[koltuk_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[rezervasyon]    Script Date: 31.12.2021 14:34:15 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[rezervasyon](
+	[rezerve_id] [int] IDENTITY(1,1) NOT NULL,
+	[yolcu_id] [int] NULL,
+	[koltuk_id] [int] NULL,
+ CONSTRAINT [PK_rezervasyon] PRIMARY KEY CLUSTERED 
+(
+	[rezerve_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[sehir]    Script Date: 31.12.2021 14:34:15 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[sehir](
+	[sehir_id] [int] IDENTITY(1,1) NOT NULL,
+	[sehir_ad] [nvarchar](50) NULL,
+	[ulke_id] [int] NULL,
+ CONSTRAINT [PK_sehir] PRIMARY KEY CLUSTERED 
+(
+	[sehir_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[sınıf]    Script Date: 31.12.2021 14:34:15 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[sınıf](
+	[sınıf_id] [int] IDENTITY(1,1) NOT NULL,
+	[sınıf_ad] [nvarchar](50) NULL,
+ CONSTRAINT [PK_sınıf] PRIMARY KEY CLUSTERED 
+(
+	[sınıf_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ucak_kayit]    Script Date: 31.12.2021 14:34:15 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ucak_kayit](
+	[ucus_kodu] [nvarchar](50) NULL,
+	[kalkis_saati] [nvarchar](50) NULL,
+	[varis_saati] [nvarchar](50) NULL,
+	[kalkis_sehir_id] [int] NULL,
+	[varis_sehir_id] [int] NULL,
+	[gidis_tarihi] [nvarchar](50) NULL,
+	[donus_tarihi] [nvarchar](50) NULL,
+	[ucak_id] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PK_ucak_kayit] PRIMARY KEY CLUSTERED 
+(
+	[ucak_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ulke]    Script Date: 31.12.2021 14:34:15 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ulke](
+	[ulke_id] [int] IDENTITY(1,1) NOT NULL,
+	[ulke_ad] [nvarchar](50) NULL,
+ CONSTRAINT [PK_ulke] PRIMARY KEY CLUSTERED 
+(
+	[ulke_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[kayit_bilgiler] ON 
+GO
+INSERT [dbo].[kayit_bilgiler] ([adi], [soyadi], [dogum_tarihi], [uyruk], [cinsiyet], [ulke_id], [sehir_id], [posta_kodu], [adres], [e_posta], [ulke_bolge_kodu], [cep_tel], [sifre], [yolcu_id]) VALUES (N'baran', N'arslan', N'2005-06-28', N'1091', N'Erkek     ', 1, 1, 3400, N'tarabya', N'baran@gmail.com', N'', N'123456', N'b123', 8)
+GO
+INSERT [dbo].[kayit_bilgiler] ([adi], [soyadi], [dogum_tarihi], [uyruk], [cinsiyet], [ulke_id], [sehir_id], [posta_kodu], [adres], [e_posta], [ulke_bolge_kodu], [cep_tel], [sifre], [yolcu_id]) VALUES (N'efehan', N'sezgin', N'1091-01-01', N'01.01.2005', N'Erkek     ', 1, 41, 3700, N'ayazaga', N'efehan@gmail.com', N'Türkiye : +90', N'(0506) 025-4025', N'efe123', 11)
+GO
+INSERT [dbo].[kayit_bilgiler] ([adi], [soyadi], [dogum_tarihi], [uyruk], [cinsiyet], [ulke_id], [sehir_id], [posta_kodu], [adres], [e_posta], [ulke_bolge_kodu], [cep_tel], [sifre], [yolcu_id]) VALUES (N'hüseyin', N'kara', N'1091-01-01', N'02.02.2005', N'Erkek     ', 1, 21, 8521, N'ayazaga', N'hüseyin@gmail.com', N'Türkiye : +90', N'(0535) 412-5865', N'habes', 12)
+GO
+INSERT [dbo].[kayit_bilgiler] ([adi], [soyadi], [dogum_tarihi], [uyruk], [cinsiyet], [ulke_id], [sehir_id], [posta_kodu], [adres], [e_posta], [ulke_bolge_kodu], [cep_tel], [sifre], [yolcu_id]) VALUES (N'admin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, N'1234', 13)
+GO
+INSERT [dbo].[kayit_bilgiler] ([adi], [soyadi], [dogum_tarihi], [uyruk], [cinsiyet], [ulke_id], [sehir_id], [posta_kodu], [adres], [e_posta], [ulke_bolge_kodu], [cep_tel], [sifre], [yolcu_id]) VALUES (N'yusuf', N'gülcü', N'1091-01-01', N'03.03.2005', N'Erkek     ', 1, 1, 8500, N'fsm mahallesi', N'yusuf@gmail.com', N'Türkiye : +90', N'(0565) 789-4512', N'yusufg', 14)
+GO
+INSERT [dbo].[kayit_bilgiler] ([adi], [soyadi], [dogum_tarihi], [uyruk], [cinsiyet], [ulke_id], [sehir_id], [posta_kodu], [adres], [e_posta], [ulke_bolge_kodu], [cep_tel], [sifre], [yolcu_id]) VALUES (N'emrah', N'gökdere', N'1091-01-01', N'10.09.2005', N'Erkek     ', 1, 1, 7500, N'ayazağa', N'emrah@gmail.com', N'Türkiye : +90', N'(0530) 722-3419', N'emrah123', 15)
+GO
+INSERT [dbo].[kayit_bilgiler] ([adi], [soyadi], [dogum_tarihi], [uyruk], [cinsiyet], [ulke_id], [sehir_id], [posta_kodu], [adres], [e_posta], [ulke_bolge_kodu], [cep_tel], [sifre], [yolcu_id]) VALUES (N'leyla', N'vurankaya', N'1091-01-01', N'28.06.2005', N'Kadın     ', 1, 1, 7851, N'ayazağa', N'leyla@gmail.com', N'Türkiye : +90', N'(0526) 842-5125', N'l1234', 16)
+GO
+INSERT [dbo].[kayit_bilgiler] ([adi], [soyadi], [dogum_tarihi], [uyruk], [cinsiyet], [ulke_id], [sehir_id], [posta_kodu], [adres], [e_posta], [ulke_bolge_kodu], [cep_tel], [sifre], [yolcu_id]) VALUES (N'mustafa', N'bulut', N'1', N'30.06.2003', N'Erkek     ', 1, 1, 4532, N'ayazağa', N'mustafa@gmail.com', N'Türkiye : +90', N'(0532) 654-7894', N'1234', 17)
+GO
+INSERT [dbo].[kayit_bilgiler] ([adi], [soyadi], [dogum_tarihi], [uyruk], [cinsiyet], [ulke_id], [sehir_id], [posta_kodu], [adres], [e_posta], [ulke_bolge_kodu], [cep_tel], [sifre], [yolcu_id]) VALUES (N'emirhan', N'maden', N'1091', N'23.05.2005', N'Erkek     ', 1, 1, 2898, N'ayazağa', N'baran@gmail.com', N'Türkiye : +90', N'(0581) 235-6878', N'maden', 18)
+GO
+INSERT [dbo].[kayit_bilgiler] ([adi], [soyadi], [dogum_tarihi], [uyruk], [cinsiyet], [ulke_id], [sehir_id], [posta_kodu], [adres], [e_posta], [ulke_bolge_kodu], [cep_tel], [sifre], [yolcu_id]) VALUES (N'leyla', N'vurankaya', N'1091', N'28.06.2005', N'Kadın     ', 1, 1, 3465, N'lütfi aykaç', N'l@g.com', N'Türkiye : +90', N'(0555) 666-4556', N'12345', 19)
+GO
+SET IDENTITY_INSERT [dbo].[kayit_bilgiler] OFF
+GO
+SET IDENTITY_INSERT [dbo].[koltuk] ON 
+GO
+INSERT [dbo].[koltuk] ([koltuk_id], [koltuk_fiyat], [sınıf_id]) VALUES (1, 40, NULL)
+GO
+SET IDENTITY_INSERT [dbo].[koltuk] OFF
+GO
+SET IDENTITY_INSERT [dbo].[rezervasyon] ON 
+GO
+INSERT [dbo].[rezervasyon] ([rezerve_id], [yolcu_id], [koltuk_id]) VALUES (4, 8, 1)
+GO
+SET IDENTITY_INSERT [dbo].[rezervasyon] OFF
+GO
+SET IDENTITY_INSERT [dbo].[sehir] ON 
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (1, N'İstanbul', 1)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (2, N'Ankara', 1)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (3, N'Antalya', 1)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (4, N'Elazığ', 1)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (5, N'Bursa', 1)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (6, N'Altenburg', 2)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (7, N'Berlin', 2)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (8, N'Bremen', 2)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (9, N'Emden', 2)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (10, N'Frankfurt', 2)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (11, N'Seattle', 3)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (12, N'Las Vegas', 3)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (13, N'Boston', 3)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (14, N'Los Angles', 3)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (15, N'New York', 3)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (16, N'Tokyo', 4)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (17, N'Osaka', 4)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (18, N'Chiba', 4)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (19, N'Aichi', 4)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (20, N'Okinawa', 4)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (21, N'Anhui', 5)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (22, N'Çongçing', 5)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (23, N'Fuzhou', 5)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (24, N'Shaoguan', 5)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (25, N'Baise', 5)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (26, N'Belgord', 6)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (27, N'Kolomna', 6)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (28, N'Kursk', 6)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (29, N'Moskova', 6)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (30, N'Voronezh', 6)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (31, N'Londra', 7)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (32, N'Manchester', 7)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (33, N'Southampton', 7)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (34, N'Newcastle', 7)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (35, N'Sheffield', 7)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (36, N'Paris', 8)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (37, N'Lyon', 8)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (38, N'Marsilya', 8)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (39, N'Rennes', 8)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (40, N'Nantes', 8)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (41, N'Milano', 9)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (42, N'Napoli', 9)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (43, N'Venedik', 9)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (44, N'Cenova', 9)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (45, N'Floransa', 9)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (46, N'Brasilia', 10)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (47, N'Sao Paula', 10)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (48, N'Santos', 10)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (49, N'Deputado', 10)
+GO
+INSERT [dbo].[sehir] ([sehir_id], [sehir_ad], [ulke_id]) VALUES (50, N'Santos Dumont', 10)
+GO
+SET IDENTITY_INSERT [dbo].[sehir] OFF
+GO
+SET IDENTITY_INSERT [dbo].[sınıf] ON 
+GO
+INSERT [dbo].[sınıf] ([sınıf_id], [sınıf_ad]) VALUES (1, N'Bussines')
+GO
+INSERT [dbo].[sınıf] ([sınıf_id], [sınıf_ad]) VALUES (2, N'Economic')
+GO
+SET IDENTITY_INSERT [dbo].[sınıf] OFF
+GO
+SET IDENTITY_INSERT [dbo].[ucak_kayit] ON 
+GO
+INSERT [dbo].[ucak_kayit] ([ucus_kodu], [kalkis_saati], [varis_saati], [kalkis_sehir_id], [varis_sehir_id], [gidis_tarihi], [donus_tarihi], [ucak_id]) VALUES (N'', N'', NULL, NULL, NULL, NULL, NULL, 36)
+GO
+INSERT [dbo].[ucak_kayit] ([ucus_kodu], [kalkis_saati], [varis_saati], [kalkis_sehir_id], [varis_sehir_id], [gidis_tarihi], [donus_tarihi], [ucak_id]) VALUES (N'sqhkjlk', N'21:00', N'22:00', 7, 23, N'31.12.2021 10:01:38', N'2.01.2022 10:01:38', 37)
+GO
+SET IDENTITY_INSERT [dbo].[ucak_kayit] OFF
+GO
+SET IDENTITY_INSERT [dbo].[ulke] ON 
+GO
+INSERT [dbo].[ulke] ([ulke_id], [ulke_ad]) VALUES (1, N'Türkiye')
+GO
+INSERT [dbo].[ulke] ([ulke_id], [ulke_ad]) VALUES (2, N'Almanya')
+GO
+INSERT [dbo].[ulke] ([ulke_id], [ulke_ad]) VALUES (3, N'Amerika')
+GO
+INSERT [dbo].[ulke] ([ulke_id], [ulke_ad]) VALUES (4, N'Japonya')
+GO
+INSERT [dbo].[ulke] ([ulke_id], [ulke_ad]) VALUES (5, N'Çin')
+GO
+INSERT [dbo].[ulke] ([ulke_id], [ulke_ad]) VALUES (6, N'Rusya')
+GO
+INSERT [dbo].[ulke] ([ulke_id], [ulke_ad]) VALUES (7, N'İngiltere')
+GO
+INSERT [dbo].[ulke] ([ulke_id], [ulke_ad]) VALUES (8, N'Fransa')
+GO
+INSERT [dbo].[ulke] ([ulke_id], [ulke_ad]) VALUES (9, N'İtalya')
+GO
+INSERT [dbo].[ulke] ([ulke_id], [ulke_ad]) VALUES (10, N'Hollanda')
+GO
+SET IDENTITY_INSERT [dbo].[ulke] OFF
+GO
+ALTER TABLE [dbo].[kayit_bilgiler]  WITH CHECK ADD  CONSTRAINT [FK_kayit_bilgiler_sehir] FOREIGN KEY([sehir_id])
+REFERENCES [dbo].[sehir] ([sehir_id])
+GO
+ALTER TABLE [dbo].[kayit_bilgiler] CHECK CONSTRAINT [FK_kayit_bilgiler_sehir]
+GO
+ALTER TABLE [dbo].[kayit_bilgiler]  WITH CHECK ADD  CONSTRAINT [FK_kayit_bilgiler_ulke] FOREIGN KEY([ulke_id])
+REFERENCES [dbo].[ulke] ([ulke_id])
+GO
+ALTER TABLE [dbo].[kayit_bilgiler] CHECK CONSTRAINT [FK_kayit_bilgiler_ulke]
+GO
+ALTER TABLE [dbo].[rezervasyon]  WITH CHECK ADD  CONSTRAINT [FK_rezervasyon_kayit_bilgiler] FOREIGN KEY([yolcu_id])
+REFERENCES [dbo].[kayit_bilgiler] ([yolcu_id])
+GO
+ALTER TABLE [dbo].[rezervasyon] CHECK CONSTRAINT [FK_rezervasyon_kayit_bilgiler]
+GO
+ALTER TABLE [dbo].[rezervasyon]  WITH CHECK ADD  CONSTRAINT [FK_rezervasyon_koltuk] FOREIGN KEY([koltuk_id])
+REFERENCES [dbo].[koltuk] ([koltuk_id])
+GO
+ALTER TABLE [dbo].[rezervasyon] CHECK CONSTRAINT [FK_rezervasyon_koltuk]
+GO
+ALTER TABLE [dbo].[sehir]  WITH CHECK ADD  CONSTRAINT [FK_sehir_ulke] FOREIGN KEY([ulke_id])
+REFERENCES [dbo].[ulke] ([ulke_id])
+GO
+ALTER TABLE [dbo].[sehir] CHECK CONSTRAINT [FK_sehir_ulke]
+GO
+ALTER TABLE [dbo].[ucak_kayit]  WITH CHECK ADD  CONSTRAINT [FK_ucak_kayit_sehir] FOREIGN KEY([kalkis_sehir_id])
+REFERENCES [dbo].[sehir] ([sehir_id])
+GO
+ALTER TABLE [dbo].[ucak_kayit] CHECK CONSTRAINT [FK_ucak_kayit_sehir]
+GO
+ALTER TABLE [dbo].[ucak_kayit]  WITH CHECK ADD  CONSTRAINT [FK_ucak_kayit_sehir1] FOREIGN KEY([varis_sehir_id])
+REFERENCES [dbo].[sehir] ([sehir_id])
+GO
+ALTER TABLE [dbo].[ucak_kayit] CHECK CONSTRAINT [FK_ucak_kayit_sehir1]
+GO

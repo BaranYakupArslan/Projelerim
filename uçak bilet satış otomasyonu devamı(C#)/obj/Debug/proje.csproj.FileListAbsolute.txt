@@ -1,0 +1,14 @@
+C:\Users\Bilg\Desktop\proje_devam11-master\bin\Debug\proje.exe.config
+C:\Users\Bilg\Desktop\proje_devam11-master\bin\Debug\proje.exe
+C:\Users\Bilg\Desktop\proje_devam11-master\bin\Debug\proje.pdb
+C:\Users\Bilg\Desktop\proje_devam11-master\obj\Debug\proje.csprojAssemblyReference.cache
+C:\Users\Bilg\Desktop\proje_devam11-master\obj\Debug\proje.admin.resources
+C:\Users\Bilg\Desktop\proje_devam11-master\obj\Debug\proje.Form1.resources
+C:\Users\Bilg\Desktop\proje_devam11-master\obj\Debug\proje.kayitOlma.resources
+C:\Users\Bilg\Desktop\proje_devam11-master\obj\Debug\proje.koltuk.resources
+C:\Users\Bilg\Desktop\proje_devam11-master\obj\Debug\proje.Properties.Resources.resources
+C:\Users\Bilg\Desktop\proje_devam11-master\obj\Debug\proje.ucakBilet.resources
+C:\Users\Bilg\Desktop\proje_devam11-master\obj\Debug\proje.csproj.GenerateResource.cache
+C:\Users\Bilg\Desktop\proje_devam11-master\obj\Debug\proje.csproj.CoreCompileInputs.cache
+C:\Users\Bilg\Desktop\proje_devam11-master\obj\Debug\proje.exe
+C:\Users\Bilg\Desktop\proje_devam11-master\obj\Debug\proje.pdb
