@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <title>yapay Zeka</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .kutu {
+      display: flex;
+    }
+
+    .kutu-2 {
+      display: flex;
+    }
+
+    .kutu-3 {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .kutu-4 {
+      display: flex;
+      align-items: center;
+      border: 5px solid black;
+      margin-right: 1.8rem;
+    }
+
+    .resim {
+      width: 400px;
+    }
+
+    @media screen and (max-width:1400px) {
+
+      .kutu {
+        display: block;
+        text-align: center;
+      }
+
+      .kutu-2 {
+        justify-content: space-around;
+        margin-top: 2rem;
+      }
+
+      .kutu-4 {
+        margin-left: 2rem;
+      }
+
+    }
+
+    @media screen and (max-width:988px) {
+      .kutu-2 {
+        margin-right: 2rem;
+      }
+
+      .kutu-4 {
+        font-size: small;
+      }
+
+      @media screen and (max-width:768px) {
+
+        .kutu {
+          margin-left: -4rem;
+        }
+
+        .kutu-2 {
+          margin-right: -5rem;
+        }
+
+        .kutu-3 {
+          margin-top: 2rem;
+          text-align: center;
+          display: block;
+        }
+
+        .kutu-4 {
+          margin-right: 0;
+          margin-left: 0;
+          font-size: medium;
+          margin-top: 1rem;
+        }
+
+
+      }
+
+      @media screen and (max-width:670px) {
+
+        .resim-2 {
+          width: 500px;
+          margin-left: 4rem;
+        }
+
+      }
+
+      @media screen and (max-width:600px) {
+
+        .kutu-2 {
+          width: 500px;
+          margin-left: 3rem;
+        }
+
+      }
+
+      @media screen and (max-width:520px) {
+
+        .resim-2 {
+          width: 400px;
+          margin-left: 6.5rem;
+        }
+
+        .kutu-2 {
+          display: block;
+          width: 500px;
+          margin-left: 8.5rem;
+        }
+
+      }
+
+      @media screen and (max-width:460px) {
+
+        .resim-2 {
+          width: 350px;
+        }
+
+        .kutu-2 {
+          display: block;
+          width: 500px;
+          margin-left: 6.5rem;
+        }
+
+      }
+
+      @media screen and (max-width:420px){
+        .resim{
+          width: 300px;
+          margin-left: 2.2rem;
+        }
+
+        .resim-2{
+          margin-left: 6rem;
+        }
+      }
+
+      @media screen and (max-width:400px){
+        .resim{
+          width: 300px;
+          margin-left: -1.5rem;
+        }
+
+        .resim-2{
+          margin-left: 4rem;
+        }
+
+        .kutu-2{
+          margin-left: 4rem;
+        }
+      }
+
+      @media screen and (max-width:360px){
+        .resim{
+          width: 300px;
+        }
+
+        .resim-2{
+          margin-left: 5rem;
+          width: 300px;
+        }
+
+        .kutu-2{
+          margin-left: 3rem;
+        }
+      }
+
+      @media screen and (max-width:330px){
+        .resim{
+          width: 250px;
+          margin-left: 1rem;
+        }
+
+        .resim-2{
+          margin-left: 6rem;
+          width: 250px;
+        }
+
+        .kutu-2{
+          margin-left: 2.5rem;
+        }
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-dark bg-dark" style="height: 40px;">
+
+  </nav>
+
+  <div class="container-fluid">
+
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container">
+        <img src="./images/a-geac664098_1280.png" style="height: 50px;" alt="">
+        <button class="navbar-toggler" type="button" style="border: 3px solid black;" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Neden Baran.İo?</a>
+
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Ürünler
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="container">
+    <h1>Yapay Zeka Haberleri</h1>
+    <hr>
+    <p style="font-size: larger;">Yapay Zeka haberi sayfasında en son yaşanan yapay zeka gelişmeleri ile birlikte
+      geçmişten bugüne Baran.İo ya eklenen yapay zeka haber başlıkları yer almaktadır.</p>
+
+    <div class="row">
+
+      <div class="col kutu">
+
+        <a href="./kalp.html"><img src="./images/kalp.PNG" class="resim-2" alt=""></a>
+
+        <div class="col kutu-2">
+          <div class="card" style="width: 18rem;margin-left: 2rem;">
+            <img src="./images/hava_kirlilii_1_1_13888.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Yapay zeka ile hava kirliliği ölçülecek</h5>
+              <p class="card-text">Dünyada hava kirliliği her geçen gün artıyor. Özellikle Türkiye’de büyükşehirler
+                kirlilik riski altında. Hava kirliliğini ölçmek için istanbul teknik üniversitesi yeni bir sistem
+                geliştiriyor. Araçların üzerine takılacak çip ile tüm şehirdeki hava kirliliği anlık takip edilebilecek.
+              </p>
+              <a href="havaKirli.html" class="btn btn-primary">Habere Git</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;margin-left: 2rem;">
+            <img src="./images/621884892af10722f0f7155f.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Yapay zeka destekli beyaz tahta kamerası</h5>
+              <p class="card-text">Toplantı ve sınıflardaki katılımcıların bilgiye eşit derecede ulaşabilmesi amacıyla
+                geliştirilen yapay zeka destekli bir beyaz tahta kamerası olan Logitech Scribe, Microsoft Teams ve Zoom
+                gibi önde gelen hizmetlerle uyumlu içerisinde çalışıyor.</p>
+              <a href="yapayTahta.html" class="btn btn-primary">Habere Git</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="mt-2 kutu-3">
+
+        <a href="covid.html"><img src="./images/covid.PNG" class="resim" alt=""></a>
+
+        <div class="card-body text-center kutu-4">
+
+          <div>
+
+            <h5 class="card-title">ABD'ye yapay zeka uyarısı: Geleceğin hakimi Çin olacak</h5>
+
+            <p class="card-text">Pentagon'da teknolojideki atıllığa ve bürokrasiye isyan ederek istifasını sunan baş
+              yazılımcı Chaillan, yapay zekada Çin'e karşı <br> yarışın kaybedilmek üzere olduğunu söyledi, ABD'ye sert
+              eleştirilerde bulundu.</p>
+            <a href="amerika.html" class="btn btn-primary">Habere Git</a>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
