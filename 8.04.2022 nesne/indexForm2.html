@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+
+        .bg-orange{
+            background-color: orangered;
+            color: white;
+        }
+
+        .bg-orange:active{
+            color: white;
+            background-color: black;
+        }
+
+        .bg-orange:hover{
+            color: white;
+        }
+
+        .ort{
+            display: flex;
+            align-items: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .bg-darkBlue{
+            background-color: rgb(14, 14, 209);
+        }
+
+    </style>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+      <div class="container">
+
+        <div class="row mt-2">
+            <div class="col-12 col bg-darkBlue ort" style="height: 200px;">
+               <h3>Webnir Registration Form
+                <p style="font-size:large;">Register for our latest webinar....</p>
+               </h3> 
+               
+            </div>
+
+            <div class="row mt-2">
+                <h2>Name</h2>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                </div>
+              </div>
+
+              <div class="row mt-2">
+                <h2>Email</h2>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Enter Email" aria-label="Enter Email">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Confirm Email" aria-label="Confirm Email">
+                </div>
+              </div>
+
+              <div class="row mt-2">
+                <h2>Company Website</h2>
+                <div class="col-4">
+                  <input type="text" class="form-control" placeholder="https://yoursite.com" aria-label="https://yoursite.com">
+                </div>
+              </div>
+
+              <div class="row mt-2">
+                <h2>Position / Job Title</h2>
+                <div class="col-4">
+                  <input type="text" class="form-control" placeholder="Job title" aria-label="Job title">
+                </div>
+              </div>
+
+              <div class="row mt-2">
+                <h2>İndustry Type</h2>
+                <div class="col-4">
+                    <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                    <select class="form-select" id="autoSizingSelect">
+                      <option selected>Advertasing</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+              </div>
+
+              <div class="row mt-2">
+                <h2>Do you have any questions you would like to ask our speakers?</h2>
+                <form>
+                    <div class="mb-3">
+                      <textarea class="form-control" id="validationTextarea" placeholder="We love questions!" required></textarea>
+                      <div class="text-muted">
+                        0 of 500 max characters
+                      </div>
+                    </div>
+                </form>
+              </div>
+
+              <div class="row mt-2">
+                <h2>How did you hear about this webiner</h2>
+                <div class="col-4">
+                    <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                    <select class="form-select" id="autoSizingSelect">
+                      <option selected>Social Media</option>
+                      <option value="1">İnstagram</option>
+                      <option value="2">Twitter</option>
+                      <option value="3">Facebook</option>
+                    </select>
+                  </div>
+              </div>
+
+              <div class="row mt-2">
+                  <h2>Want to keep up-to-date with our latest news and announcements?</h2>
+                <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                      <label class="form-check-label" for="invalidCheck2">
+                        Yes Please!
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-12 g-3">
+                    <button class="btn bg-orange" type="submit">Register Today</button>
+                  </div>
+              </div>
+              
+
+              
+
+
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>
